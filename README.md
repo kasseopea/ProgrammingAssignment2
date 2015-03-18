@@ -1,3 +1,14 @@
+---
+title: "README"
+author: "Mariah Azlan"
+date: "Wednesday, March 18, 2015"
+output: html_document
+---
+
+### Notes from Mariah (Kasseo)
+This cachematrix contains two functions written in R : makeCacheMatrix and cacheSolve. The description of the functions can be read through the comments in the source file. To see the output of the program please refer to cacheMatrix_output.docx which has screenshots
+
+
 ### Introduction
 
 This second programming assignment will require you to write an R
