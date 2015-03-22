@@ -1,4 +1,4 @@
-## function makeCacheMatrix creates a list using the matrix x. In this function 
+## function makeCacheMatrix creates a list of functions using the matrix x. In this function 
 ## it returns accessor and modifier functions that help retrieve the x matrix or its inverse matrix (invMatrix)
 
 makeCacheMatrix <- function(x = matrix()) {
@@ -12,7 +12,7 @@ makeCacheMatrix <- function(x = matrix()) {
   }
   get <- function() x 
   
-  #modifier and accessor functions of inverse matrix
+  #modifier and accessor functions of the inverse matrix of x
   setInvMat <- function(y) invMatrix <<- y  
   getInvMat <- function() invMatrix  
   
@@ -33,14 +33,14 @@ cacheSolve <- function(x, ...) {
   
   invMat <- x$getInvMat()
   if(!is.null(invMat)) {
-    message("getting cached data")  #there's already an inverse matrix for x
+    message("getting cached data")  #if there's already an inverse matrix for x print message
   } else {
     mat <- x$get()
-    message("No cached inverse matrix, calculating for you...") #no cached matrix, calculate it and tell the user
+    message("No cached inverse matrix, calculating for you...") #if there's no cached inverse matrix, calculate it and tell the user
     invMat <- solve(mat, ...)  #calculate the inverse matrix 
     x$setInvMat(invMat) #set invMat as the inverse matrix for x 
   }
-  invMat #return inverse matrix
+  invMat #return the inverse matrix
 }
 
 
